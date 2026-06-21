@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architect // Career OS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <button id="tab-edit" class="active" onclick="show('edit')">Editor</button>
+    <button id="tab-prev" onclick="show('preview')">Preview</button>
+</nav>
+
+<div id="edit" class="page active">
+    <h3>Profile</h3>
+    <input type="text" id="name" placeholder="Full Name" oninput="save()">
+    <textarea id="summary" placeholder="Professional Summary" oninput="save()"></textarea>
+    
+    <h3>Experience</h3>
+    <div id="exp-container"></div>
+    <button onclick="addExp()" style="background: transparent; border: 2px dashed #8b5cf6; color: #8b5cf6; width: 100%; margin-top: 10px;">+ Add Experience</button>
+</div>
+
+<div id="preview" class="page">
+    <div id="preview-content">
+        <h1 id="p-name">Your Name</h1>
+        <p id="p-summary"></p>
+        <div id="p-exp"></div>
+    </div>
+    <button onclick="window.print()" style="margin-top: 20px; background: #8b5cf6; width: 100%;">Download PDF</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
